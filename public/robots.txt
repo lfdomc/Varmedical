@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://varmedical.vercel.app/ 
+
+# Sitemaps
+Sitemap: https://varmedical.vercel.app/ /sitemap.xml

@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap', // Redirige directamente a la API Route
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
