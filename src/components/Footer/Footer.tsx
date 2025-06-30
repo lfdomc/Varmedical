@@ -23,8 +23,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Columna 2: Enlaces útiles */}
-          <div className="flex flex-col items-center md:items-start">
+          {/* Columna 2: Enlaces útiles (ocultos en móviles) */}
+          <div className="hidden md:flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4">Enlaces útiles</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -132,7 +132,7 @@ const Footer = () => {
         <div className="text-center text-sm">
           © {new Date().getFullYear()} Todos los derechos reservados. Desarrollado por{' '}
           <a
-            href="https://www.crtemsa.com  "
+            href="https://www.crtemsa.com "
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-blue-400 transition-colors"
