@@ -1,93 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { logo } from "@/clientdata/clientInfo";
 
-// Styled Components
-const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`;
+const Header: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-const NavMenu = styled.nav`
-  display: flex;
-  gap: 1.5rem;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const MenuItem = styled(Link)`
-  color: #181313;
-  text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #0b00d4;
-  }
-`;
-
-const MobileMenuButton = styled.button`
-  background: none;
-  border: none;
-  color: #080404;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
-
-const MobileMenu = styled.div<{ $isOpen: boolean }>`
-  position: fixed;
-  top: 0;
-  right: ${({ $isOpen }) => ($isOpen ? "0" : "-250px")};
-  width: 250px;
-  height: 100%;
-  background-color: #04396f;
-  transition: right 0.3s ease-in-out;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  z-index: 1000;
-`;
-
-const MobileMenuItem = styled(Link)`
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #00bcd4;
-  }
-`;
-
-const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMobileMenu = (): void => {
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent): void => {
       const target = event.target as HTMLElement;
       if (
         isMobileMenuOpen &&
@@ -108,60 +33,120 @@ const Header = () => {
   return (
     <>
       {/* Encabezado */}
-      <HeaderContainer>
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 bg-white shadow-md">
         {/* Logo envuelto en un Link para redirigir a la página de inicio */}
-        <Link href="/" aria-label="Inicio">
+        <Link href="/" aria-label="Inicio" className="flex-shrink-0">
           <Image
             src={logo}
             alt="Logo"
             width={220}
             height={80}
             priority
-            style={{ objectFit: "contain" }}
+            className="object-contain"
           />
         </Link>
 
         {/* Menú de navegación para pantallas grandes */}
-        <NavMenu>
-          <MenuItem href="/">Inicio</MenuItem>
-          <MenuItem href="/equips">Equipos</MenuItem>
-          <MenuItem href="/inputs">Insumos</MenuItem>
-          <MenuItem href="/marcas">Marcas</MenuItem>
-          <MenuItem href="/about">Sobre Nosotros</MenuItem>
-          <MenuItem href="/contact">Contacto</MenuItem>
-        </NavMenu>
+        <nav className="hidden gap-6 text-lg font-medium text-gray-800 md:flex">
+          <Link
+            href="/"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Inicio
+          </Link>
+          <Link
+            href="/equips"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Equipos
+          </Link>
+          <Link
+            href="/inputs"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Insumos
+          </Link>
+          <Link
+            href="/marcas"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Marcas
+          </Link>
+          <Link
+            href="/about"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Sobre Nosotros
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-blue-700 transition-colors duration-300"
+          >
+            Contacto
+          </Link>
+        </nav>
 
         {/* Botón del menú móvil */}
-        <MobileMenuButton
-          className="mobile-menu-button"
+        <button
+          className="text-2xl text-gray-800 cursor-pointer md:hidden mobile-menu-button"
           onClick={toggleMobileMenu}
           aria-label="Menú móvil"
         >
           ☰
-        </MobileMenuButton>
-      </HeaderContainer>
+        </button>
+      </header>
 
       {/* Menú móvil */}
-      <MobileMenu $isOpen={isMobileMenuOpen} className="mobile-menu">
-        <MobileMenuItem href="/" onClick={toggleMobileMenu}>
-          Inicio
-        </MobileMenuItem>
-        <MobileMenuItem href="/equips" onClick={toggleMobileMenu}>
-          Equipos
-        </MobileMenuItem>
-        <MobileMenuItem href="/inputs" onClick={toggleMobileMenu}>
-          Insumos
-        </MobileMenuItem>
-        <MobileMenuItem href="/marcas" onClick={toggleMobileMenu}>
-          Nuestras Marcas
-        </MobileMenuItem>
-        <MobileMenuItem href="/about" onClick={toggleMobileMenu}>
-          Sobre Nosotros
-        </MobileMenuItem>
-        <MobileMenuItem href="/contact" onClick={toggleMobileMenu}>
-          Contacto
-        </MobileMenuItem>
-      </MobileMenu>
+      <div
+        className={`fixed top-0 right-0 w-64 h-full bg-blue-900 shadow-lg p-8 z-50 transition-transform duration-300 transform ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        } mobile-menu`}
+      >
+        <nav className="flex flex-col gap-6 text-white">
+          <Link
+            href="/"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Inicio
+          </Link>
+          <Link
+            href="/equips"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Equipos
+          </Link>
+          <Link
+            href="/inputs"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Insumos
+          </Link>
+          <Link
+            href="/marcas"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Nuestras Marcas
+          </Link>
+          <Link
+            href="/about"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Sobre Nosotros
+          </Link>
+          <Link
+            href="/contact"
+            className="text-lg hover:text-cyan-400 transition-colors duration-300"
+            onClick={toggleMobileMenu}
+          >
+            Contacto
+          </Link>
+        </nav>
+      </div>
     </>
   );
 };
