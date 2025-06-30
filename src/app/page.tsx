@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Banner1 from "@/components/Banner/Banner";
 import BetterBannerImg from "@/components/BetterBanner/BetterBannerImg";
 import BetterBanner from "@/components/BetterBanner/BetterBanner";
@@ -7,19 +6,32 @@ import Card1 from "@/components/Card1/Card1";
 import Card2 from "@/components/Card1/Card2";
 import Card3 from "@/components/Card1/Card3";
 
+export const metadata = {
+  title: "VarMedical líder en Equipos Médicos y Reactivos para Laboratorio",
+  description:
+    "Var Medical es una empresa que provee equipo médico y reactivos para Laboratorios en Costa Rica.",
+  alternates: {
+    canonical: "https://varmedical.com/ ",
+  },
+  openGraph: {
+    url: "https://varmedical.com/ ",
+    title: "Var Medical | Equipos Médicos y Servicios de Mantenimiento",
+    description:
+      "Var Medical es una empresa que provee equipo médico y reactivos para Costa Rica.",
+    images: [
+      {
+        url: "/image/var/equipos/bioteck.webp",
+        width: 1200,
+        height: 630,
+        alt: "Var Medical Equipos Médicos",
+      },
+    ],
+  },
+};
+
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>VarMedical líder en Equipos Médicos y Reactivos para Laboratorio</title>
-        <meta name="description" content="Var Medical es una empresa que provee equipo médico y reactivos para Laboratorios en Costa Rica."/>
-        <link rel="canonical" href="https://varmedical.com/"/>
-        <meta property="og:url" content="https://varmedical.com/"/>
-        <meta property="og:title" content="Var Medical | Equipos Médicos y Servicios de Mantenimiento"/>
-        <meta property="og:description" content="Var Medical es una empresa que provee equipo médico y reactivos para Costa Rica."/>
-        <meta property="og:image" content="/image/var/equipos/bioteck.webp"/>
-      </Head>
-
       <div className="main-content">
         {/* Imagen con clase para estilos responsivos */}
         <Image
