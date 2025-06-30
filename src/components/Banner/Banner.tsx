@@ -1,68 +1,41 @@
-"use client"
-import styled from "styled-components";
+"use client";
+import React from "react";
 
-const H1 = styled.h1<{ $bgColor: string, $fColor: string }>`
-  background-color: ${(props) => props.$bgColor};
-  color: ${(props) => props.$fColor};
-  width: auto;
-  max-width: 90%;
-  padding: 10px 10px;
-  font-family: "Dosis", serif;
-  text-align: center;
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin-top: 50px;
-  border-bottom: 3px solid #0575f8;
-  width: auto;
-
-  @media (max-width: 1024px) {
-    font-size: 4.5rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-top: 20px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
-  }
-`;
-
-const Banner1 = styled.div<{ $bgColor: string; $fColor: string }>`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  background-color: ${(props) => props.$bgColor};
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2px;
-  padding-top: 30px;
-  margin: 0.1px;
-  
-  
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 5px;
-  }
-`;
-
+// Definimos la interfaz para las props del componente
 interface Info {
   image?: string;
   h1?: string;
-  color: string;
-  fcolor: string;
+  color: string; // Color de fondo
+  fcolor: string; // Color del texto
 }
 
 const Banner = ({ h1, color, fcolor }: Info) => {
   return (
-    <Banner1 $bgColor={color} $fColor={fcolor}>
-      <H1 $bgColor={color} $fColor={fcolor}>{h1}</H1>
-    </Banner1>
+    <div
+      className={`flex flex-wrap items-center justify-center w-full gap-2 pt-8 pb-12 bg-[${color}]`}
+    >
+      {/* H1 con estilos responsivos */}
+      <h1
+        className={`text-center font-dosis font-black text-[1.5rem] border-b-[3px] border-[#0575f8] leading-none text-[${fcolor}] 
+          sm:text-[1.5rem] 
+          md:text-[2.5rem] 
+          lg:text-[2.5rem] 
+          xl:text-[2.5rem] 
+          2xl:text-[2.5rem]
+          max-w-[90%] mx-auto px-4 py-2 mt-16
+          sm:mt-20 
+          md:mt-12 
+          lg:mt-20 
+          xl:mt-20 
+          2xl:mt-20`}
+        style={{
+          backgroundColor: color,
+          color: fcolor,
+        }}
+      >
+        {h1}
+      </h1>
+    </div>
   );
 };
 

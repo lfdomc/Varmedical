@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsApp from "@/components/WhatsApp/WhatsApp";
 import Header from "@/components/Header/Header";
+import { phoneNumber } from "@/clientdata/clientInfo";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* Propiedades pasadas al componente WhatsApp */}
-        
+        <WhatsApp phoneNumber={phoneNumber} imageSrc="/image/whatsapp.png" />
         <Header />
         {children}
         <Footer/>
