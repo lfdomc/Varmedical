@@ -70,7 +70,7 @@ const Footer = () => {
                 className="hover:text-blue-400 transition-colors"
               >
                 <Image
-                  src="/Redes/fbw.png"
+                  src="/Redes/fbw.webp"
                   alt="Facebook Icon"
                   width={24}
                   height={24}
