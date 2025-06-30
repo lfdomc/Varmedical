@@ -25,7 +25,7 @@ const Footer = () => {
 
           {/* Columna 2: Enlaces útiles (ocultos en móviles) */}
           <div className="hidden md:flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-4">Enlaces útiles</h3>
+            <h2 className="text-lg font-semibold mb-4">Enlaces útiles</h2>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="hover:text-blue-400 transition-colors">
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Columna 3: Redes sociales */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <h2 className="text-lg font-semibold mb-4">Contacto</h2>
             <p className="text-sm mb-2">Teléfono: +506 4000-1230</p>
             <p className="text-sm mb-2">Email: info@varmedical.com</p>
             <p className="text-sm mb-2">Direccion: Alajuela Costa Rica</p>

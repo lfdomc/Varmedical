@@ -22,7 +22,7 @@ const ContactDetails = styled.div`
   text-align: center;
   margin-bottom: 2rem;
 
-  h2 {
+  h1 {
     font-size: 2rem;
     color: #0f0c0c;
     margin-bottom: 1rem;
@@ -48,7 +48,7 @@ const ContactInfo: React.FC = () => {
     <ContactContainer>
       {/* Sección de información de contacto */}
       <ContactDetails>
-        <h2>Información de Contacto</h2>
+        <h1>Información de Contacto</h1>
         <p>
           <strong>Dirección:</strong> Alajuela, Tuetar Norte
         </p>

@@ -12,12 +12,12 @@ export default function Home() {
     <>
       <Head>
         <title>VarMedical líder en Equipos Médicos y Reactivos para Laboratorio</title>
-        <meta name="description" content="Var Medical es una empresa que provee equipo médico y reactivos para Laboratorios en Costa Rica." />
-        <link rel="canonical" href="https://varmedical.com/ " />
-        <meta property="og:url" content="https://varmedical.com/ " />
-        <meta property="og:title" content="Var Medical | Equipos Médicos y Servicios de Mantenimiento" />
-        <meta property="og:description" content="Var Medical es una empresa que provee equipo médico y reactivos para Costa Rica." />
-        <meta property="og:image" content="/image/var/equipos/bioteck.webp" />
+        <meta name="description" content="Var Medical es una empresa que provee equipo médico y reactivos para Laboratorios en Costa Rica."/>
+        <link rel="canonical" href="https://varmedical.com/"/>
+        <meta property="og:url" content="https://varmedical.com/"/>
+        <meta property="og:title" content="Var Medical | Equipos Médicos y Servicios de Mantenimiento"/>
+        <meta property="og:description" content="Var Medical es una empresa que provee equipo médico y reactivos para Costa Rica."/>
+        <meta property="og:image" content="/image/var/equipos/bioteck.webp"/>
       </Head>
 
       <div className="main-content">
