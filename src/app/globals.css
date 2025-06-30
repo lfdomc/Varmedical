@@ -40,3 +40,15 @@ body {
     margin-top: 110px; /* Ajusta si es necesario para pantallas pequeñas */
   }
 }
+
+.social-icon {
+  width: 24px; /* Tamaño predeterminado */
+  height: 24px;
+}
+
+@media (max-width: 640px) {
+  .social-icon {
+    width: 49px; /* Tamaño mínimo en dispositivos pequeños */
+    height: 49px;
+  }
+}

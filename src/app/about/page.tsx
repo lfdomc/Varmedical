@@ -8,7 +8,7 @@ export default function About() {
           flexdirection="row-reverse"
           bgmain="#d8d8db"
           bgimage=""
-          image="/image/var/Laboratorio.jpg"
+          image="/image/var/Laboratorio.webp"
           title="Servicio y Calidad"
           text="Contamos con un equipo de profesionales con amplia experiencia en el mercado de equipos, insumos y reactivos médicos."
           textbutton="Contacte con Nosotros"

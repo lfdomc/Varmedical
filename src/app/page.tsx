@@ -17,13 +17,13 @@ export default function Home() {
         <meta property="og:url" content="https://varmedical.com/ " />
         <meta property="og:title" content="Var Medical | Equipos Médicos y Servicios de Mantenimiento" />
         <meta property="og:description" content="Var Medical es una empresa que provee equipo médico y servicios de mantenimiento a diferentes sectores de la salud en Costa Rica." />
-        <meta property="og:image" content="/image/var/bioteck.jpg" />
+        <meta property="og:image" content="/image/var/equipos/bioteck.webp" />
       </Head>
 
       <div className="main-content">
         {/* Imagen con clase para estilos responsivos */}
         <Image
-          src="/image/var/lab1.png"
+          src="/image/var/lab1.webp"
           alt="Var Medical Banner"
           width={1420}
           height={50}
@@ -36,7 +36,7 @@ export default function Home() {
           flexdirection="row"
           bgmain="#ffffff"
           bgimage=""
-          image="/image/var/productos.jpg"
+          image="/image/var/productos.webp"
           title="Var Medical"
           text="Es una empresa que provee equipo médico y servicios de mantenimiento a diferentes sectores de la salud, de una manera responsable, competente y proactiva; capaz de abastecer las necesidades de una sociedad creciente incursionando como agente innovador en el ámbito de la salud costarricense."
           textbutton="Saber más"
@@ -58,7 +58,7 @@ export default function Home() {
           flexdirection="row"
           bgmain="#d8d8db"
           bgimage=""
-          image="/image/var/productos.jpg"
+          image="/image/var/productos.webp"
           title="Servicio de Mantenimiento"
           text="Servicio de calidad y confianza, brindamos soluciones integradas para dar mantenimiento y asistencia a sus equipos."
           textbutton="Contacte con Nosotros"

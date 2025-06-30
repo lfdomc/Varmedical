@@ -6,22 +6,22 @@ import Image from "next/image";
 
 const ImageGallery = () => {
   const images = [
-    { id: 1, src: "/image/var/marcas/Liofilchem.png", alt: "Reactivos Liofilchem", text: "Liofilchem", link: "/page1" },
-    { id: 2, src: "/image/var/marcas/BioTek.png", alt: "Reactivos BioTek", text: "BioTek", link: "/page2" },
-    { id: 3, src: "/image/var/marcas/IMMUNO.png", alt: "Reactivos IMMUNO Concepts", text: "Immuno Concepts", link: "/page3" },
-    { id: 4, src: "/image/var/marcas/BIOTEST.png", alt: "Reactivos BIOTEST", text: "Biotest", link: "/page4" },
-    { id: 5, src: "/image/var/marcas/DIAMOND.png", alt: "Reactivos DIAMOND", text: "Diamond ", link: "/page5" },
-    { id: 6, src: "/image/var/marcas/VITASSAY.png", alt: "Reactivos VITASSAY", text: "Vitassay", link: "/page5" },
-    { id: 7, src: "/image/var/marcas/SPINREACT.png", alt: "Reactivos SPINREACT", text: "Spinreact", link: "/page5" },
-    { id: 8, src: "/image/var/marcas/VIRION.png", alt: "Reactivos VIRION", text: "Virion/Serion", link: "/page5" },
-    { id: 9, src: "/image/var/marcas/lp-italiana.png", alt: "Reactivos lp-italiana", text: "LP Italiana", link: "/page5" },
-    { id: 10, src: "/image/var/marcas/UNICO.png", alt: "Reactivos UNICO", text: "Unico", link: "/page5" },
-    { id: 11, src: "/image/var/marcas/DENKA.png", alt: "Reactivos DENKA", text: "Denka Seiken", link: "/page5" },
-    { id: 12, src: "/image/var/marcas/DIAMETRA.png", alt: "Reactivos DIAMETRA", text: "Diametra", link: "/page5" },
-    { id: 13, src: "/image/var/marcas/IMMY.png", alt: "Reactivos IMMY", text: "Immy", link: "/page5" },
-    { id: 14, src: "/image/var/marcas/ACON.png", alt: "Reactivos ACON", text: "Acon", link: "/page5" },
-    { id: 15, src: "/image/var/marcas/EDAN.png", alt: "Reactivos EDAN", text: "Edan", link: "/page5" },
-    { id: 16, src: "/image/var/marcas/HARDY.png", alt: "Reactivos HARDY", text: "Hardy", link: "/page5" },
+    { id: 1, src: "/image/var/marcas/Liofilchem.webp", alt: "Reactivos Liofilchem", text: "Liofilchem", link: "/page1" },
+    { id: 2, src: "/image/var/marcas/BioTek.webp", alt: "Reactivos BioTek", text: "BioTek", link: "/page2" },
+    { id: 3, src: "/image/var/marcas/IMMUNO.webp", alt: "Reactivos IMMUNO Concepts", text: "Immuno Concepts", link: "/page3" },
+    { id: 4, src: "/image/var/marcas/BIOTEST.webp", alt: "Reactivos BIOTEST", text: "Biotest", link: "/page4" },
+    { id: 5, src: "/image/var/marcas/DIAMOND.webp", alt: "Reactivos DIAMOND", text: "Diamond ", link: "/page5" },
+    { id: 6, src: "/image/var/marcas/VITASSAY.webp", alt: "Reactivos VITASSAY", text: "Vitassay", link: "/page5" },
+    { id: 7, src: "/image/var/marcas/SPINREACT.webp", alt: "Reactivos SPINREACT", text: "Spinreact", link: "/page5" },
+    { id: 8, src: "/image/var/marcas/VIRION.webp", alt: "Reactivos VIRION", text: "Virion/Serion", link: "/page5" },
+    { id: 9, src: "/image/var/marcas/lp-italiana.webp", alt: "Reactivos lp-italiana", text: "LP Italiana", link: "/page5" },
+    { id: 10, src: "/image/var/marcas/UNICO.webp", alt: "Reactivos UNICO", text: "Unico", link: "/page5" },
+    { id: 11, src: "/image/var/marcas/DENKA.webp", alt: "Reactivos DENKA", text: "Denka Seiken", link: "/page5" },
+    { id: 12, src: "/image/var/marcas/DIAMETRA.webp", alt: "Reactivos DIAMETRA", text: "Diametra", link: "/page5" },
+    { id: 13, src: "/image/var/marcas/IMMY.webp", alt: "Reactivos IMMY", text: "Immy", link: "/page5" },
+    { id: 14, src: "/image/var/marcas/ACON.webp", alt: "Reactivos ACON", text: "Acon", link: "/page5" },
+    { id: 15, src: "/image/var/marcas/EDAN.webp", alt: "Reactivos EDAN", text: "Edan", link: "/page5" },
+    { id: 16, src: "/image/var/marcas/HARDY.webp", alt: "Reactivos HARDY", text: "Hardy", link: "/page5" },
   ];
 
   return (

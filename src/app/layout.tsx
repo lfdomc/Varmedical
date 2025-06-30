@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* Propiedades pasadas al componente WhatsApp */}
-        <WhatsApp phoneNumber={phoneNumber} imageSrc="/image/whatsapp.png" />
+        <WhatsApp phoneNumber={phoneNumber} imageSrc="/image/whatsapp.webp" />
         <Header />
         {children}
         <Footer/>
