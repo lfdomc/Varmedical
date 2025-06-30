@@ -1,7 +1,6 @@
 "use client"; // Este archivo ya es un componente del cliente
 import styled from "styled-components";
 import { useRouter } from "next/navigation"; // Importamos useRouter aquí
-import YouTubePlayer from "@/components/YouTubePlayer/YouTubePlayer"; // Importamos el componente YouTubePlayer
 import Image from "next/image"; // Importamos Image de Next.js
 
 const MainSection = styled.section<{
