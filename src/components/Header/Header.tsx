@@ -42,7 +42,8 @@ const Header: React.FC = () => {
             width={220}
             height={80}
             priority
-            className="object-contain"
+            style={{ width: "auto", height: "auto" }} // Mantener la relación de aspecto
+            className="object-contain max-w-[220px] max-h-[80px]" // Asegurar que no exceda las dimensiones máximas
           />
         </Link>
 

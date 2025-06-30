@@ -1,130 +1,6 @@
 "use client"; // Este archivo ya es un componente del cliente
-import styled from "styled-components";
 import { useRouter } from "next/navigation"; // Importamos useRouter aquí
-import Image from "next/image"; // Importamos el componente Image de Next.js
 import YouTubePlayer from "@/components/YouTubePlayer/YouTubePlayer"; // Importamos el componente YouTubePlayer
-
-const MainSection = styled.section<{ $bgmain: string; $flexdirection: string; $bgimage: string }>`
-  display: flex;
-  flex-direction: ${(props) => props.$flexdirection};
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  background-color: ${(props) => props.$bgmain};
-  align-items: center;
-  justify-content: center;
-  background-image: ${(props) => (props.$bgimage ? `url(${props.$bgimage})` : "none")};
-  padding-top: 2rem;
-  padding-bottom: 2rem; /* pb-20 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    padding: 0;
-    margin-top: 10px;
-  }
-`;
-
-const SectionA = styled.section<{ $imgflexdirection?: string }>`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  padding-top: 2px;
-
-  img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 60px;
-    padding-bottom: 20px;
-    display: none;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    img {
-      max-width: 90%;
-    }
-  }
-`;
-
-const SectionB = styled.section`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Dosis", sans-serif;
-  text-align: justify;
-  padding: 5px 5px;
-
-  h1 {
-    font-size: clamp(2rem, 3vw, 3.5rem); /* Ajuste para mejorar legibilidad */
-    font-weight: 600;
-    max-width: 90%;
-    text-align: center; /* Centrado del título */
-  }
-
-  h2 {
-    font-size: clamp(1rem, 1.5vw, 1.5rem); /* Ajuste para mejorar legibilidad */
-    font-weight: 400;
-    max-width: 80%;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-
-    h1 {
-      font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño más grande en móviles */
-    }
-
-    h2 {
-      font-size: clamp(1rem, 1.5vw, 1.5rem); /* Tamaño más grande en móviles */
-    }
-  }
-`;
-
-const Button = styled.button<{ $btColor: string; $fbtColor: string; $hbtColor: string }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-width: 150px;
-  background-color: ${(props) => props.$btColor};
-  color: ${(props) => props.$fbtColor};
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
-    background-color: ${(props) => props.$hbtColor};
-  }
-
-  img {
-    width: 50px;
-  }
-
-  @media (max-width: 768px) {
-    width: 50%;
-    font-size: clamp(1rem, 2vw, 1.5rem); /* Ajuste para botones en móviles */
-  }
-`;
-
-const Button2 = styled(Button)<{ $bt2display: string }>`
-  display: ${(props) => props.$bt2display};
-`;
 
 interface BannerProps {
   image: string;
@@ -135,11 +11,11 @@ interface BannerProps {
   hbtColor: string;
   fbtColor: string;
   bgmain: string;
-  flexdirection: string;
+  flexdirection: "row" | "column";
   btimage?: string;
   bgimage?: string;
   imonClick?: () => void;
-  bt2display: string;
+  bt2display: "block" | "none";
   btimage2?: string;
   bt2Color: string;
   fb2tColor: string;
@@ -148,7 +24,7 @@ interface BannerProps {
 }
 
 const BetterBanner: React.FC<BannerProps> = ({
-  image,
+  
   title,
   text,
   textbutton,
@@ -157,9 +33,9 @@ const BetterBanner: React.FC<BannerProps> = ({
   bgmain,
   hbtColor,
   flexdirection,
-  btimage = "",
+  
   bgimage = "",
-  imonClick,
+  
   bt2display,
   bt2Color,
   fb2tColor,
@@ -173,57 +49,47 @@ const BetterBanner: React.FC<BannerProps> = ({
   };
 
   return (
-    <MainSection $bgmain={bgmain} $flexdirection={flexdirection} $bgimage={bgimage}>
-      <SectionA>
+    <section
+      className={`flex ${
+        flexdirection === "row" ? "flex-row" : "flex-col-reverse"
+      } flex-wrap w-full h-auto items-center justify-center bg-${bgmain} pt-10 pb-10 rounded-lg shadow-lg bg-no-repeat bg-cover`}
+      style={{
+        backgroundImage: bgimage ? `url(${bgimage})` : "none",
+      }}
+    >
+      {/* Section A */}
+      <div className="relative flex justify-center items-center w-full md:w-1/2">
         {/* Reemplazamos <img> con <Image> */}
-        <Image
-          src={image}
-          alt="Imagen"
-          width={500} // Ancho deseado de la imagen
-          height={300} // Altura deseada de la imagen
-          onClick={imonClick}
-          style={{ borderRadius: "60px" }}
-        />
         <YouTubePlayer videoId="suAZRYWSiVg" />
-      </SectionA>
-      <SectionB>
-        <h1>{title}</h1>
-        <h2>{text}</h2>
-        <Button
-          $btColor={btColor}
-          $hbtColor={hbtColor}
-          $fbtColor={fbtColor}
-          onClick={handleButtonClick} // Lógica de navegación aquí
-        >
-          {btimage && (
-            <Image
-              src={btimage}
-              alt="boton"
-              width={50} // Ancho deseado del ícono del botón
-              height={50} // Altura deseada del ícono del botón
-            />
-          )}
-          {textbutton}
-        </Button>
+      </div>
 
-        <Button2
-          $btColor={bt2Color}
-          $hbtColor={hbt2Color}
-          $fbtColor={fb2tColor}
-          $bt2display={bt2display}
+      {/* Section B */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center font-dosis text-justify p-2">
+        <h1 className="text-4xl sm:text-5xl font-bold max-w-[90%] text-center mt-4">
+          {title}
+        </h1>
+        <h2 className="text-lg sm:text-xl font-normal max-w-[80%] mt-4">
+          {text}
+        </h2>
+
+        {/* Botón principal */}
+        <button
+          className={`flex items-center justify-center gap-4 min-w-[150px] bg-${btColor} text-${fbtColor} font-bold py-2 px-4 rounded-lg mt-4 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-${hbtColor}`}
+          onClick={handleButtonClick}
         >
-          {btimage && (
-            <Image
-              src={btimage}
-              alt="boton"
-              width={50} // Ancho deseado del ícono del botón
-              height={50} // Altura deseada del ícono del botón
-            />
-          )}
+          {textbutton}
+        </button>
+
+        {/* Segundo botón */}
+        <button
+          className={`flex items-center justify-center gap-4 min-w-[150px] bg-${bt2Color} text-${fb2tColor} font-bold py-2 px-4 rounded-lg mt-4 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-${hbt2Color} ${
+            bt2display === "block" ? "block" : "hidden"
+          }`}
+        >
           {textbutton2}
-        </Button2>
-      </SectionB>
-    </MainSection>
+        </button>
+      </div>
+    </section>
   );
 };
 
