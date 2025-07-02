@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const ImageGallery2 = () => {
   const images = [
-    { id: 1, src: '/image/var/cristal.webp', alt: 'Equipos de Cristalería', text: 'Cristalería', link: '/page1' },
-    { id: 2, src: '/image/var/muestra.webp', alt: 'Toma de muestras', text: 'Insumos para toma de muestras', link: '/page2' },
-    { id: 3, src: '/image/var/plastic.avif', alt: 'Plásticos', text: 'Insumos plásticos', link: '/page3' },
+    { id: 1, src: '/image/var/cristal.webp', alt: 'Equipos de Cristalería', text: 'Cristalería', link: '' },
+    { id: 2, src: '/image/var/muestra.webp', alt: 'Toma de muestras', text: 'Insumos para toma de muestras', link: '' },
+    { id: 3, src: '/image/var/plastic.avif', alt: 'Plásticos', text: 'Insumos plásticos', link: '' },
   ];
 
   return (

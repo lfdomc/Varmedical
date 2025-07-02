@@ -6,9 +6,14 @@ import { logo } from "@/clientdata/clientInfo";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isEquipDropdownOpen, setIsEquipDropdownOpen] = useState<boolean>(false);
 
   const toggleMobileMenu = (): void => {
     setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const toggleEquipDropdown = (): void => {
+    setIsEquipDropdownOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -21,6 +26,13 @@ const Header: React.FC = () => {
       ) {
         setIsMobileMenuOpen(false);
       }
+      if (
+        isEquipDropdownOpen &&
+        !target.closest(".equip-dropdown") &&
+        !target.closest(".equip-dropdown-button")
+      ) {
+        setIsEquipDropdownOpen(false);
+      }
     };
 
     document.addEventListener("click", handleClickOutside);
@@ -28,7 +40,7 @@ const Header: React.FC = () => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isEquipDropdownOpen]);
 
   return (
     <>
@@ -55,12 +67,76 @@ const Header: React.FC = () => {
           >
             Inicio
           </Link>
-          <Link
-            href="/equips"
-            className="hover:text-blue-700 transition-colors duration-300"
-          >
-            Equipos
-          </Link>
+          {/* Dropdown para Equipos */}
+          <div className="relative equip-dropdown">
+            <button
+              className="flex items-center gap-1 hover:text-blue-700 transition-colors duration-300 cursor-pointer equip-dropdown-button"
+              onClick={toggleEquipDropdown}
+            >
+              Equipos ▼
+            </button>
+            {isEquipDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 bg-blue-900 shadow-md rounded-md overflow-hidden equip-dropdown">
+                <Link
+                  href="/equips"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Todas las Líneas
+                </Link>
+                <Link
+                  href="/quimic"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Química
+                </Link>
+                <Link
+                  href="/hematology"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Hematología
+                </Link>
+                {/* Agregando Coagulación */}
+                <Link
+                  href="/coagula"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Coagulación
+                </Link>
+                {/* Agregando Inmunología */}
+                <Link
+                  href="/inmuno"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Inmunología
+                </Link>
+                {/* Agregando Electrolitos */}
+                <Link
+                  href="/electrolit"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                  }}
+                >
+                  Electrolitos
+                </Link>
+              </div>
+            )}
+          </div>
           <Link
             href="/inputs"
             className="hover:text-blue-700 transition-colors duration-300"
@@ -111,13 +187,82 @@ const Header: React.FC = () => {
           >
             Inicio
           </Link>
-          <Link
-            href="/equips"
-            className="text-lg hover:text-cyan-400 transition-colors duration-300"
-            onClick={toggleMobileMenu}
-          >
-            Equipos
-          </Link>
+          {/* Dropdown para Equipos en versión móvil */}
+          <div className="relative">
+            <button
+              className="flex items-center gap-1 text-lg hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+              onClick={toggleEquipDropdown}
+            >
+              Equipos ▼
+            </button>
+            {isEquipDropdownOpen && (
+              <div className="mt-2 space-y-2 bg-blue-900 rounded-md shadow-md">
+                <Link
+                  href="/equips"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Todas las Líneas
+                </Link>
+                <Link
+                  href="/quimic"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Química
+                </Link>
+                <Link
+                  href="/hematology"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Hematología
+                </Link>
+                {/* Agregando Coagulación */}
+                <Link
+                  href="/coagula"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Coagulación
+                </Link>
+                {/* Agregando Inmunología */}
+                <Link
+                  href="/inmuno"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Inmunología
+                </Link>
+                {/* Agregando Electrolitos */}
+                <Link
+                  href="/electrolit"
+                  className="block px-4 py-2 text-white hover:bg-blue-700 transition-colors duration-300"
+                  onClick={() => {
+                    toggleEquipDropdown();
+                    toggleMobileMenu();
+                  }}
+                >
+                  Electrolitos
+                </Link>
+              </div>
+            )}
+          </div>
           <Link
             href="/inputs"
             className="text-lg hover:text-cyan-400 transition-colors duration-300"

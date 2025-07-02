@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const ImageGallery = () => {
   const images = [
-    { id: 1, src: '/image/var/equipos/spin200.webp', alt: 'Equipos de Química', text: 'Química', link: '/page1' },
-    { id: 2, src: '/image/var/equipos/spincell.webp', alt: 'Equipos de Hematologia', text: 'Hematologia', link: '/page2' },
+    { id: 1, src: '/image/var/equipos/spin200.webp', alt: 'Equipos de Química', text: 'Química', link: '/quimic' },
+    { id: 2, src: '/image/var/equipos/spincell.webp', alt: 'Equipos de Hematologia', text: 'Hematologia', link: '/hematology' },
     { id: 3, src: '/image/var/equipos/prolite.webp', alt: 'Equipos de Electrolitos', text: 'Electrolitos', link: '/page3' },
     { id: 4, src: '/image/var/equipos/aft3000.webp', alt: 'Equipos de Inmunología', text: 'Inmunología', link: '/page4' },
     { id: 5, src: '/image/var/equipos/bioteck.webp', alt: 'Equipos de Investigación', text: 'Investigación', link: '/page5' },
