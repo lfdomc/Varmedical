@@ -93,7 +93,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href=" https://www.google.com/maps/dir/10.0087612 ,-84.2387645/VAR+MEDICAL,+Provincia+de+Alajuela,+Alajuela,+Lor%C3%ADa/@10.0222848,-84.2547899,14z/data=!3m1!4b1!4m17!1m7!3m6!1s0x8fa0f702d9b1fc41:0x73dc71c1c4bceb37!2sVAR+MEDICAL!8m2!3d10.036166!4d-84.224466!16s%2Fg%2F11rwyks2hy!4m8!1m1!4e1!1m5!1m1!1s0x8fa0f702d9b1fc41:0x73dc71c1c4bceb37!2m2!1d-84.2244579!2d10.0361516?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                href="https://maps.app.goo.gl/djyFJ8NYZxZhZtJx7"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Maps"
