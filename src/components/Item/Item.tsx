@@ -37,7 +37,7 @@ const MedicalEquipmentList: React.FC = () => {
       title: "SPIN 200E",
       description:
         "• Velocidad: 200pruebas/hora, 330 pruebas/hora  con electrolitos.\n• Estación de lavado en 8 pasos con precalentamiento de detergente y agua.\n• Sistema óptico con 12 longitudes de onda.\n• Sistema completamente abierto con perfiles definidos por el usuario.\n• 40 posiciones de muestra, 40 posiciones de reactivo.\n• Compartimento refrigerado a 2-12 ºC para muestra y reactivo.\n• Conexión bi-directional al SIL.",
-      imageUrl: "/image/var/equipos/Spin200.webp", // Imagen de ejemplo
+      imageUrl: "/image/var/equipos/spin200.webp", // Imagen de ejemplo
       pdfUrl: "/image/var/PDF/Spin200.pdf", // Ruta del PDF de ejemplo
       youtubeVideoId: "5ja-GW7cOyU", // Ejemplo de ID de video de YouTube
     },
