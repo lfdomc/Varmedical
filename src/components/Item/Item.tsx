@@ -46,8 +46,8 @@ const MedicalEquipmentList: React.FC = () => {
       title: "SPIN 640 plus",
       description:
         "• 400 pruebas/hora, hasta 640 pruebas hora con módulo ISE\n• Compartimento refrigerado para reactivos\n• Capacidad de carga para 90 muestras\n• Lector de código de barras interno (opcional)",
-      imageUrl: "/image/var/equipos/Spin640plus.webp", // Imagen de ejemplo
-      pdfUrl: "/image/var/PDF/spin640.pdf", // Ruta del PDF de ejemplo
+      imageUrl: "/image/var/equipos/spin640plus.webp", // Imagen de ejemplo
+      pdfUrl: "/image/var/PDF/Spin640.pdf", // Ruta del PDF de ejemplo
       youtubeVideoId: "c1O-lvTgptE", // Ejemplo de ID de video de YouTube
     },
   ];
